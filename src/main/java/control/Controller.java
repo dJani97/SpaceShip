@@ -21,6 +21,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import model.Player;
 /**
  *
  * @author djani
@@ -37,8 +38,9 @@ public class Controller implements Runnable {
     Image imgAsteroid;
     Thread controllerThread;
     int timeSurvived;
-    String playerName;
+    Player player;
     Dao dao;
+    List<Player> playerList;
 
     public Controller(GamePanel gamePanel, ScorePanel scorePanel) {
         this.gamePanel = gamePanel;
@@ -69,9 +71,10 @@ public class Controller implements Runnable {
         imgAsteroid = new ImageIcon(this.getClass().
                 getResource(Globals.IMG_ASTEROID)).getImage();
         
-               
-        playerName = askForName();
-        scorePanel.setPlayerName(playerName);
+        establishConnection();
+        loadPlayerScores();
+        player = new Player(askForName());
+        scorePanel.setPlayerName(player.getName());
         startGame();
     }
     
@@ -82,7 +85,7 @@ public class Controller implements Runnable {
         Image imgThrusting = new ImageIcon(this.getClass().
                 getResource(Globals.IMG_SHIP_THRUSTING)).getImage();
         
-        ship = new Ship(200, 200, 0.1f, 0.1f, 10, 0.5f, img, imgThrusting, this);
+        ship = new Ship(gamePanel.getWidth()/2, gamePanel.getHeight()/2, 0, 0, 0, 0, img, imgThrusting, this);
         Thread t = new Thread(ship);
         t.start();
         
@@ -120,7 +123,7 @@ public class Controller implements Runnable {
 
             asteroid = new GameObject(posX, posY, dX, dY, angle, angVel, imgAsteroid, this);
             
-        } while (ship.collides(asteroid));
+        } while (ship.collides(asteroid, 3));
         
         asteroids.add(asteroid);
         Thread asteroidThread = new Thread(asteroid);
@@ -171,6 +174,11 @@ public class Controller implements Runnable {
     private void establishConnection() {
         Connection connection = DB_Connector.getInstance().getConnection();
         dao = new PlayerDao(connection);
+    }
+    
+    private void loadPlayerScores() {
+        playerList = dao.listAllRecords();
+        System.out.println(playerList);
     }
     
 }

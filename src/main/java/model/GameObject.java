@@ -116,7 +116,10 @@ public class GameObject implements Runnable {
                posY - img.getHeight(null)/2 <= o.posY && o.posY <= posY + img.getHeight(null)/2;
     }
     
-    
+    public boolean collides(GameObject o, int rangeMultiplier) {
+        return posX - img.getWidth(null)*rangeMultiplier <= o.posX && o.posX <= posX + img.getWidth(null)*rangeMultiplier &&
+               posY - img.getHeight(null)*rangeMultiplier <= o.posY && o.posY <= posY + img.getHeight(null)*rangeMultiplier;
+    }
     
     
     

@@ -22,7 +22,7 @@ import model.Player;
  */
 public class PlayerDao implements Dao<Player, String> {
 
-    String tableName = "PLAYERS";
+    String tableName = "SPACESHIP";
     Connection connection;
 
     public PlayerDao(Connection connection) {

@@ -105,5 +105,11 @@ public class SortedListModel<T extends Comparable<T>> extends AbstractListModel 
         model.remove(element);
         this.fireIntervalRemoved(element, index, index);
     }
+    
+    public void clear() {
+        int maxIndex = model.size();
+        this.model.clear();
+        this.fireIntervalRemoved(this, 0, maxIndex);
+    }
 
 }

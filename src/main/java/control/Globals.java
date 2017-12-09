@@ -29,4 +29,9 @@ public class Globals {
     public static final String IMG_BACKGROUND = "/images/background.jpg";
     public static final String IMG_DERBIS = "/images/debris2_blue.png";
     
+    public static final String HELP_STRING = "Welcome to SpaceShip!\n"
+            + "You can control the ship with the W, A and D buttons.\n"
+            + "Your goal is to avoid all asteroids as far as possible.\n\n"
+            + "Good luck!";
+    
 }

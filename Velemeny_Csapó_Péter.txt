@@ -1,0 +1,25 @@
+Egy egyedi projekt megvalósításáról van szó, tehát feladatleírás nem tartozott hozzá.
+Az első észrevételeim a program elinditásakor azok, hogy kicsit furcsa, hogy az Input mezőnél van Cancel gomb, de nincs haszna. 
+Nyilvánvaló, hogy kér egy nevet a program, ugyanakkor fura, hogy van egy, gyakorlatilag funkcionalitás nélküli gomb, habár ez lehet a JOptionPane "hibája". Őszintén, lehet, hogy csak engem zavar / én találom érdekesnek. 
+Nem próbáltam ki, de, ha minden igaz, megvalósítható (https://stackoverflow.com/questions/16511039/is-there-a-way-to-only-have-the-ok-button-in-a-joptionpane-showinputdialog-and).
+
+A nevet beadván nagyon jól néz ki a program, ugyanakkor lehet, hogy a felhasználó eleinte nem tudja, hogy mit kéne tennie.
+Van egy help button (hozzáteszem, talán a kérdőjel nem a legjobb választás, mint text erre a buttonre, mert csak kissé látszik), amit nem clickelhetünk, míg nem adtunk be nevet. Talán ha CANCEL-re mennénk az inputnál előjöhetne a help? - Persze ez csak egy ötlet.
+Ha "meghalunk", tehát nekiütközünk egy asteroidnak, akkor szintén nem tudunk rákattintani a helpre, ami szintén kicsit frusztráló lehet.
+Kijátszani nem lehet ezt, ugyanis, ha a Do you want to restart the game kérdésre No-t felelünk, akkor a program bezárul. 
+
+Összegezvén, a help csak akkor érhető el, ha az asteroidok "keringenek", viszont, míg a helpet olvassuk, "meghalhatunk"..
+Talán elsőre nem elég intuitív (ha a helpet nem olvastuk el), de nem nyilakkal, nem egérmozgással, hanem WASD, vagyis pontosabban WAD-dal tudunk mozogni.
+Véleményem szerint nagyon profin meg van csinálva a mozgás, tényleg úgy érződik, mintha egy nagyobb volumenű játékkal játszanánk. A sugárhajtómű erre nagyon rájátszik. Az asteroidok is kellően össze-vissza mozognak.
+
+A csomag, valamint osztálystruktúra teljesen korrekt, helyén vannak a csomagok elnevezései, továbbá az osztályoké is.
+
+Az egyes alaposztályok tartralmazzák a szükséged metódusokat ahhoz, hogy úgy fusson a program, ahogy a tervező, János eltervezte.
+A szálak azt csinálják, ami a dolguk, s úgy mozognak, ahogy nekik kell.
+
+A felületek letisztultak, szimplák, nem zavaró szinűek, esztétikusak. Természetesen függetlenek egymástól, ami egy ilyen volumenű programnál várható.
+
+Az egészet összegezvén egy nagyon szép programot készített el János, amivel tényleg el lehet játszani, ha erre van időnk.
+
+Véleményezte:
+Csapó Péter
